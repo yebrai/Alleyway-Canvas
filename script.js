@@ -11,7 +11,7 @@ let ballDirectionX = 1;
 // la pelotita va hacia la derecha: 1
 // la pelotita va hacia la izquierda: -1
 let ballDirectionY = 1;
-let paletaX = 150;
+let paletaX = 230;
 let paletaY = 560;
 let canvasWidth = canvas.width - 10
 let paletaHeightCollision = -10
@@ -114,7 +114,7 @@ const gameLoop = () => {
 
 window.addEventListener("keydown", (event) => {
  //   console.log(event.code)
-    if (event.code === "ArrowRight" && paletaX < canvas.width - 150) {
+    if (event.code === "ArrowRight" && paletaX < canvas.width - paletaHeight) {
         paletaX = paletaX + 20
     }
     
