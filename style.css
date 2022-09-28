@@ -1,0 +1,8 @@
+
+#game {
+    display: flex
+}
+
+#game div{
+    justify-content: center;
+}
