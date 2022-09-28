@@ -100,6 +100,7 @@ body {
     #my-canvas {
         width: 40vh;
         height: 70vh;
+        margin: 0px 10px 0px 0px
     }
     #game-over {
     font-size: 3rem;    
