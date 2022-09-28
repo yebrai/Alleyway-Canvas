@@ -5,7 +5,9 @@ const ctx = canvas.getContext("2d");
 canvas.style.backgroundColor = "black";
 //Dom
 let score = document.querySelector("#goal-score")
-
+let loser = document.querySelector("#game-over")
+let ScoreWindow = document.querySelector("#score")
+let extraGoal = document.querySelector("#extra")
  
 
 
@@ -67,8 +69,15 @@ const pelotitaPaletaCollision = () => {
         paletaCollision()
         goalCount++
         score.innerText = goalCount
-
         speed = speed + 0.5
+        if (goalCount > 5) {
+        extra.innerText = "Insane!"
+      } else if (goalCount > 3) {
+        extra.innerText = "Excelent!"
+      } else if (goalCount > 1) {
+        extra.innerText = "Awesome!"
+      } 
+      
         
     }
 
@@ -85,6 +94,8 @@ const pelotitaWallCollision = () => {
 
   if (ballY > canvas.height) {
     isGameOn = false;
+    loser.innerText = "YOU LOSE!"
+    ScoreWindow.remove()
 
   }
 
