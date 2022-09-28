@@ -4,6 +4,12 @@ const canvas = document.querySelector("#my-canvas");
 const ctx = canvas.getContext("2d");
 canvas.style.backgroundColor = "black";
 
+//Dom
+let score = document.querySelector("#goal-score")
+
+ 
+
+
 // variables globales
 let ballX = 50;
 let ballY = 50;
@@ -20,6 +26,8 @@ let speed = 1
 let randomColor = "white"
 //"Math.floor(Math.random()*16777215).toString(16)"
 let isGameOn = true // el juego sigue andando
+let goalCount = 0
+
 
 // funciones del juego
 const drawBall = () => {
@@ -55,12 +63,9 @@ const pelotitaPaletaCollision = () => {
     // paletaY
     if (ballY > paletaY + paletaHeightCollision && ballX > paletaX && ballX < (paletaX + 150)) {
         // la pelota ha pasado el punto de la paleta
-        console.log("botes")
         ballDirectionY = -1
         paletaCollision()
         speed = speed + 0.5
-        
-        
         
     }
 
@@ -125,10 +130,10 @@ window.addEventListener("keydown", (event) => {
 
 gameLoop();
 
-
 //bonus limpiar colisiones.
 // incluir score
 // aumentar velocidad
 //boton para reiniciar (Window.reload)
 // mejorar forma de paleta y que esta no salga de los bordes "Siempre se mueve a la derecha o izquierda"
 //reducir paleta cuanto mas rebotes
+score.textContent = goalCount
