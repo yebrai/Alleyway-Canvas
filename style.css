@@ -14,7 +14,6 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
 }
 
 #my-canvas {
@@ -31,10 +30,13 @@ body {
     grid-row-end:2;
     font-family: 'Monofett', cursive;
     font-size: 2rem;
-    
+    width: 27vh;
+
 
 }
-
+#logo {
+    margin-bottom: 100vh;
+}
 #game {
     grid-column-start: 2;
     grid-column-end: 3;
@@ -63,7 +65,7 @@ body {
     grid-row-end:3;
     margin-top: 10vh;
     text-align: center;
-    width: 100%;
+    
 }
 
 #refresh {
@@ -104,6 +106,30 @@ body {
     }
     #game-over {
     font-size: 3rem;    
+    }
+}
+
+@media (max-width: 400px) {
+    #my-canvas {
+        width: 32vh;
+        height: 70vh;
+        margin: 0px 0px 0px 1vh
+    }
+    #game-over {
+    font-size: 3rem;    
+    }
+
+    #logo {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start:1;
+        grid-row-end:2;
+        font-family: 'Monofett', cursive;
+        font-size: 1.5rem;
+        margin: 2.5vh 0 0 8vh
+
+    
+    
     }
 }
 
