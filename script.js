@@ -14,8 +14,9 @@ let ballDirectionY = 1;
 let paletaX = 150;
 let paletaY = 560;
 let canvasWidth = canvas.width - 10
-let paletaHeight = -10
-let speed = 2
+let paletaHeightCollision = -10
+let paletaHeight = 150
+let speed = 1
 let randomColor = "white"
 //"Math.floor(Math.random()*16777215).toString(16)"
 let isGameOn = true // el juego sigue andando
@@ -30,15 +31,19 @@ const drawBall = () => {
   ctx.fill();
   ctx.closePath();
 };
+const paletaCollision= () => {
+  paletaHeight = paletaHeight - 10
+}
 
 const drawPaleta = () => {
   ctx.fillStyle = "grey";
-  ctx.fillRect(paletaX, paletaY, 150, 20)
+  ctx.fillRect(paletaX, paletaY, paletaHeight, 20)
 };
 
 const movePelotita = () => {
-  ballX = ballX + ballDirectionX * 2;
-  ballY = ballY + ballDirectionY * 2;
+  ballX = ballX + ballDirectionX * speed;
+  ballY = ballY + ballDirectionY * speed;
+  
 };
 
 const pelotitaPaletaCollision = () => {
@@ -48,17 +53,20 @@ const pelotitaPaletaCollision = () => {
     
     // ballY
     // paletaY
-    if (ballY > paletaY + paletaHeight && ballX > paletaX && ballX < (paletaX + 150)) {
+    if (ballY > paletaY + paletaHeightCollision && ballX > paletaX && ballX < (paletaX + 150)) {
         // la pelota ha pasado el punto de la paleta
         console.log("botes")
         ballDirectionY = -1
-        ctx.fillStyle = randomColor
+        paletaCollision()
+        speed = speed + 0.5
+        
         
         
     }
 
     // estan colisionando
 }
+
 
 const pelotitaWallCollision = () => {
   if (ballX > canvasWidth) {
@@ -80,6 +88,7 @@ const pelotitaWallCollision = () => {
     ballDirectionY = 1;
   }
 };
+
 
 const gameLoop = () => {
   //console.log("Ejecutando la recursion del juego")
@@ -105,10 +114,11 @@ const gameLoop = () => {
 
 window.addEventListener("keydown", (event) => {
  //   console.log(event.code)
-    if (event.code === "ArrowRight" || event.code === "KeyD") {
+    if (event.code === "ArrowRight" && paletaX < canvas.width - 150) {
         paletaX = paletaX + 20
     }
-    if (event.code === "ArrowLeft" || event.code === "KeyA") {
+    
+    if (event.code === "ArrowLeft" && paletaX > 0) {
         paletaX = paletaX - 20
     }
 })
