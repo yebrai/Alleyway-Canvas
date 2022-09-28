@@ -8,6 +8,7 @@ let score = document.querySelector("#goal-score")
 let loser = document.querySelector("#game-over")
 let ScoreWindow = document.querySelector("#score")
 let extraGoal = document.querySelector("#extra")
+let refresh = document.querySelector("#refresh")
  
 
 
@@ -23,7 +24,7 @@ let paletaY = 560;
 let canvasWidth = canvas.width - 10
 let paletaHeightCollision = -10
 let paletaHeight = 150
-let speed = 1
+let speed = 2
 let randomColor = "white"
 //"Math.floor(Math.random()*16777215).toString(16)"
 let isGameOn = true // el juego sigue andando
@@ -69,7 +70,7 @@ const pelotitaPaletaCollision = () => {
         paletaCollision()
         goalCount++
         score.innerText = goalCount
-        speed = speed + 0.5
+        speed = speed + 0.3
         if (goalCount > 5) {
         extra.innerText = "Insane!"
       } else if (goalCount > 3) {
@@ -95,6 +96,7 @@ const pelotitaWallCollision = () => {
   if (ballY > canvas.height) {
     isGameOn = false;
     loser.innerText = "YOU LOSE!"
+    refresh.innerText = "Push 'R' for restart"
     ScoreWindow.remove()
 
   }
@@ -140,6 +142,10 @@ window.addEventListener("keydown", (event) => {
     if (event.code === "ArrowLeft" && paletaX > 0) {
         paletaX = paletaX - 20
     }
+    if (event.code === "KeyR") {
+      console.log("r pulsada")
+      window.location.reload()
+  }
 })
 
 gameLoop();

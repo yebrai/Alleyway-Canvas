@@ -19,6 +19,8 @@ body {
 #my-canvas {
     align-items: center;
     width: 100%;
+    border-radius: 8px;
+
 } 
 
 #logo {
@@ -28,8 +30,6 @@ body {
     grid-row-end:2;
     font-family: 'Monofett', cursive;
     font-size: 2rem;
-    
-    
 
 }
 
@@ -60,6 +60,22 @@ body {
     grid-row-start:2;
     grid-row-end:3;
     margin-top: 10vh;
+    text-align: center;
+    width: 100%;
+}
+
+#refresh {
+    font-family: cursive;
+    color: aliceblue;
+    font-size: 1rem;
+    position: relative;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start:2;
+    grid-row-end:3;
+    margin-top: 30vh;
+    text-align: center;
+    width: 100%;
 }
 
 @media (min-width: 1030px) {
@@ -71,7 +87,6 @@ body {
 }
 
 @media (max-width: 1030px) {
-
     #my-canvas {
         width: 60vh;
         height: 70vh;
