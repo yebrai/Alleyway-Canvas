@@ -143,7 +143,6 @@ window.addEventListener("keydown", (event) => {
         paletaX = paletaX - 20
     }
     if (event.code === "KeyR") {
-      console.log("r pulsada")
       window.location.reload()
   }
 })
