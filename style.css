@@ -96,6 +96,17 @@ body {
     } 
 }
 
+@media (max-width: 630px) {
+    #my-canvas {
+        width: 40vh;
+        height: 70vh;
+    }
+    #game-over {
+    font-size: 3rem;    
+    }
+}
+
+
 html {
     cursor: crosshair
 }
