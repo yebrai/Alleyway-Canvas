@@ -38,7 +38,7 @@ const drawBall = () => {
   ctx.strokeStyle = "white";
   ctx.arc(ballX, ballY, 10, 0, 2 * Math.PI);
   ctx.stroke();
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "#b8fdff";
   ctx.fill();
   ctx.closePath();
 };
@@ -47,7 +47,7 @@ const paletaCollision= () => {
 }
 
 const drawPaleta = () => {
-  ctx.fillStyle = "grey";
+  ctx.fillStyle = "#3983ee";
   ctx.fillRect(paletaX, paletaY, paletaHeight, 20)
 };
 

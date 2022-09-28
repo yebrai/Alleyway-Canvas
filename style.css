@@ -14,6 +14,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    
 }
 
 #my-canvas {
@@ -30,6 +31,7 @@ body {
     grid-row-end:2;
     font-family: 'Monofett', cursive;
     font-size: 2rem;
+    
 
 }
 
@@ -76,6 +78,7 @@ body {
     margin-top: 30vh;
     text-align: center;
     width: 100%;
+    margin-top: 40vh;
 }
 
 @media (min-width: 1030px) {
@@ -91,4 +94,8 @@ body {
         width: 60vh;
         height: 70vh;
     } 
+}
+
+html {
+    cursor: crosshair
 }
