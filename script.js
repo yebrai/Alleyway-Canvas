@@ -42,9 +42,6 @@ const drawBall = () => {
   ctx.fill();
   ctx.closePath();
 };
-const paletaCollision= () => {
-  paletaHeight = paletaHeight - 10
-}
 
 const drawPaleta = () => {
   ctx.fillStyle = "#3983ee";
@@ -67,7 +64,6 @@ const pelotitaPaletaCollision = () => {
     if (ballY > paletaY + paletaHeightCollision && ballX > paletaX && ballX < (paletaX + 150)) {
         // la pelota ha pasado el punto de la paleta
         ballDirectionY = -1
-        paletaCollision()
         goalCount++
         score.innerText = goalCount
         speed = speed + 0.3
